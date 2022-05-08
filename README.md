@@ -1,52 +1,35 @@
-# citipy
+### Module-6-Challenge
+World_Weather_Analysis
 
-Looking up for city names with geo-coordinates has always been a big problem when it comes to dealing with social data.
+### 1) OVERVIEW:
+The purpose of this project is to collect, analyze and visualize weather data across cities worldwide and to provide travelers with a tool that will allow them to determine their travel destination based on weather conditions.
 
-I hate going through web endpoints to look for the city names; we are often rate-limited and it's also such a waste.
+### 2) WEATHER DATABASE:
+A random set of 2,000 latitudes and longitudes were generated, and an API call was made on current weather data for the nearest corresponding cities.
 
-We have only this many cities in the world, why isn't there any data set that provides the geo coordinates for all the
+![image](https://github.com/morriscomia/World_Weather_Analysis/blob/main/Weather_Database/WeatherPy_Database.csv)
 
-available cities, and we can use certain data structure/algorithm like kdtree to look up the nearest city given a set of geo coordinates?
+The following data was retrieved from the API call:
 
-Luckily, both Maxmind(www.maxmind.com/en/free-world-cities-database) and GeoNames(download.geonames.org/export/dump)
+  Latitude and longitude,
+  Maximum temperature,
+  Percent humidity,
+  Percent cloudiness,
+  Wind speed,
+  Current Weather description
 
-provide comprehensive data sets like this.
+### 3) VACATION SEARCH:
+Based on traveler’s weather preferences, travelers can identify potential travel destinations and nearby hotels. The map showcases destinations using pop-up markers on a marker layer-map.
 
-I then chose Maxmind because I think it's better. GeoNames lacks of many US cities.
+Sample Travel destination:
 
-# Example
+![image](https://github.com/morriscomia/World_Weather_Analysis/blob/main/%20Vacation_Itinerary/WeatherPy_travel_map_markers.png)
 
-## Installation
 
-```
-pip install citipy
-```
 
-## Looking up with coordinates
+### 4) VACATION ITINERARY:
+Using the Google Directions API, a sample itinerary was created that shows the route between four cities.
 
-```
->>> from citipy import citipy
->>> city = citipy.nearest_city(22.99, 120.21)
->>> city
-<citipy.City instance at 0x1069b6518>
->>>
->>> city.city_name     # Tainan, my home town
-'tainan'
->>>
->>> city.country_code
-'tw'                  # And the country is surely Taiwan
-```
+![image](https://github.com/morriscomia/World_Weather_Analysis/blob/main/%20Vacation_Itinerary/WeatherPy_travel_map.png)
 
-# World Cities Data Set
 
-I use Maxmind's Free World Cities Database. You can get it here: https://www.maxmind.com/en/free-world-cities-database .
-
-Please note that I only count in the cities whose population is over 500, otherwise the results are too noisy for me.
-
-# Contribution
-
-Just send me a PR. It's nice and easy :)
-
-# License
-
-MIT
