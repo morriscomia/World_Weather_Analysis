@@ -7,7 +7,7 @@ The purpose of this project is to collect, analyze and visualize weather data ac
 ### 2) WEATHER DATABASE:
 A random set of 2,000 latitudes and longitudes were generated, and an API call was made on current weather data for the nearest corresponding cities.
 
-![image](https://github.com/morriscomia/World_Weather_Analysis/blob/main/Weather_Database/WeatherPy_Database.csv)
+![image](https://github.com/morriscomia/World_Weather_Analysis/blob/main/Vacation_Search/hotel_df%20.png)
 
 The following data was retrieved from the API call:
 
